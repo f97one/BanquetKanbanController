@@ -1,0 +1,2 @@
+# BanquetKanbanController
+Firebase経由でタイムカウントを通知するアプリ。
