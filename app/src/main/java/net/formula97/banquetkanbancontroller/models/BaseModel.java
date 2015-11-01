@@ -85,15 +85,6 @@ public abstract class BaseModel<T> {
     public abstract List<T> findAll() throws SQLException;
 
     /**
-     * 指定するEntityに対応するレコードをひとつ取得する。
-     *
-     * @param entity 指定するEntity
-     * @return 指定条件に該当するレコード
-     * @throws SQLException SQL処理に何らかの問題があったとき
-     */
-    public abstract T findOne(T entity) throws SQLException;
-
-    /**
      * 指定フィールドの値が一致するレコードを取得する。
      *
      * @param fieldName 検索対象のフィールド名
