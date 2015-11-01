@@ -38,9 +38,14 @@ public class BanquetSummary implements Serializable {
     private static final long serialVersionUID = 5427755325678055643L;
 
     /**
+     * DB管理上必要な一貫番号
+     */
+    @DatabaseField(generatedId = true)
+    private Integer _id;
+    /**
      * 宴会ID
      */
-    @DatabaseField(generatedId = true, columnName = FIELD_BANQUET_ID)
+    @DatabaseField(unique = true, columnName = FIELD_BANQUET_ID)
     private Integer banquetId;
     /**
      * 宴会名称
@@ -71,5 +76,13 @@ public class BanquetSummary implements Serializable {
 
     public Calendar getStartAt() {
         return startAt;
+    }
+
+    public Integer get_id() {
+        return _id;
+    }
+
+    public void set_id(Integer _id) {
+        this._id = _id;
     }
 }
