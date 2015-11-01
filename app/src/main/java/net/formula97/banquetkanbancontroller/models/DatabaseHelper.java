@@ -28,14 +28,17 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public static final String DATABASE_NAME = "BanquetKanban.db";
 
     /**
-     * 自身のインスタンスを保持するメンバー
+     * ユーザー定義のコンストラクタ。<br />
+     * Context以外は定数。
+     *
+     * @param context SQLite Database取得に使うApplication Context
      */
-    private static DatabaseHelper mHelper;
+    public DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
 
     /**
      * システム上必要なコンストラクタ。<br />
-     * こちらを使用されるとHelperがSingletonにならないため、開発者レベルでの普段の呼び出しには使用しないこと。<br />
-     * ※使用したからといって、例外を投げられる等何かペナルティがあるというわけではない。
      *
      * @param context データベース取得に使用するApplication Context
      * @param databaseName オープンするSQLite Databaseの名称
@@ -45,21 +48,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
      */
     public DatabaseHelper(Context context, String databaseName, SQLiteDatabase.CursorFactory factory, int databaseVersion) {
         super(context, databaseName, factory, databaseVersion);
-    }
-
-    /**
-     * 自身のインスタンスを取得する。<br />
-     * 開発者レベルでの普段の呼び出しは、こちらを使用すること。
-     *
-     * @param context データベース取得に使用するApplication Context
-     * @return Singletonな自身のインスタンス
-     */
-    public static DatabaseHelper getHelper(Context context) {
-        if (mHelper == null) {
-            mHelper = new DatabaseHelper(context, DATABASE_NAME, null, DATABASE_VERSION);
-        }
-
-        return mHelper;
     }
 
     @Override
