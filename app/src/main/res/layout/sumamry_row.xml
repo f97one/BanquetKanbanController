@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015. Formula97.NET and HAJIME Fukuna(a.k.a. f97one) (f97one@hotmail.co.jp)
+  ~
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp">
+
+    <TextView
+        android:id="@+id/summaryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="24sp"
+        android:ellipsize="end"
+        android:text="Banquet 1"/>
+
+    <TextView
+        android:id="@+id/captionStartAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/starts_at"
+        android:layout_below="@+id/summaryName"
+        android:paddingLeft="16dp"
+        />
+
+    <TextView
+        android:id="@+id/startsAt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/summaryName"
+        android:layout_toRightOf="@+id/captionStartAt"
+        android:paddingLeft="4dp"
+        android:text="2015/11/05 18:30"/>
+
+</RelativeLayout>

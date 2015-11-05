@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BanquetKanbanController</string>
+    <string name="starts_at">Starts at :</string>
 </resources>
