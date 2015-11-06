@@ -2,6 +2,9 @@ package net.formula97.banquetkanbancontroller;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import net.formula97.banquetkanbancontroller.adapters.SummaryListAdapter;
@@ -35,5 +38,30 @@ public class MainActivity extends AppCompatActivity {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.summary, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+
+        boolean ret = false;
+
+        switch (item.getItemId()) {
+            case R.id.addBanquet:
+
+                ret = true;
+                break;
+        }
+
+        return ret;
     }
 }
