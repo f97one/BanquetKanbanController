@@ -9,7 +9,7 @@ import android.content.Context;
 
 import com.j256.ormlite.dao.Dao;
 
-import net.formula97.banquetkanbancontroller.dto.BanquetSummary;
+import net.formula97.banquetkanbancontroller.entities.BanquetSummary;
 
 import java.sql.SQLException;
 import java.util.List;

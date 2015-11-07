@@ -7,8 +7,8 @@ import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
-import net.formula97.banquetkanbancontroller.dto.BanquetSchedule;
-import net.formula97.banquetkanbancontroller.dto.BanquetSummary;
+import net.formula97.banquetkanbancontroller.entities.BanquetSchedule;
+import net.formula97.banquetkanbancontroller.entities.BanquetSummary;
 
 import java.sql.SQLException;
 

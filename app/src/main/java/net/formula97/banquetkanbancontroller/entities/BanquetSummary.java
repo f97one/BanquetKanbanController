@@ -1,4 +1,4 @@
-package net.formula97.banquetkanbancontroller.dto;
+package net.formula97.banquetkanbancontroller.entities;
 
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
