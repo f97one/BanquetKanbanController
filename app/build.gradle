@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "net.formula97.banquetkanbancontroller"
@@ -19,6 +19,7 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+        abortOnError false
     }
     packagingOptions {
         exclude 'META-INF/LICENSE'
@@ -35,9 +36,9 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.google.android.gms:play-services:8.1.0'
+    compile 'com.google.android.gms:play-services:8.3.0'
     compile 'com.android.support:appcompat-v7:23.1.0'
-    compile 'com.firebase:firebase-client-android:2.4.0+'
+    compile 'com.firebase:firebase-client-android:2.4.0'
     compile 'com.j256.ormlite:ormlite-core:4.48'
     compile 'com.j256.ormlite:ormlite-android:4.48'
     compile 'com.jakewharton:butterknife:7.0.1'
