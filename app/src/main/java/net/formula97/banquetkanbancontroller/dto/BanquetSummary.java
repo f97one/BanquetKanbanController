@@ -58,6 +58,23 @@ public class BanquetSummary implements Serializable {
     @DatabaseField(columnName = FIELD_START_AT, dataType = DataType.DATE_TIME)
     private Calendar startAt;
 
+    /**
+     * システム上必要なコンストラクタ。
+     */
+    public BanquetSummary() {
+        // システム上必要なので、中身は空
+    }
+
+    /**
+     * 開始時刻を現在時刻で生成するコンストラクタ。
+     *
+     * @param newBanquetName 生成する宴会名称
+     */
+    public BanquetSummary(String newBanquetName) {
+        this.banquetName = newBanquetName;
+        this.startAt = Calendar.getInstance();
+    }
+
     public Integer getBanquetId() {
         return banquetId;
     }
@@ -84,5 +101,9 @@ public class BanquetSummary implements Serializable {
 
     public void set_id(Integer _id) {
         this._id = _id;
+    }
+
+    public void setStartAt(Calendar startAt) {
+        this.startAt = startAt;
     }
 }
