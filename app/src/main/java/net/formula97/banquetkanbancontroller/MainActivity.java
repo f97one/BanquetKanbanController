@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 import net.formula97.banquetkanbancontroller.adapters.SummaryListAdapter;
-import net.formula97.banquetkanbancontroller.dto.BanquetSummary;
+import net.formula97.banquetkanbancontroller.entities.BanquetSummary;
 import net.formula97.banquetkanbancontroller.models.BanquetSummaryModel;
 
 import java.sql.SQLException;
