@@ -11,9 +11,11 @@ import com.j256.ormlite.dao.Dao;
 
 import net.formula97.banquetkanbancontroller.entities.BanquetSummary;
 
+import java.security.SecureRandom;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * 宴会サマリ情報(banquetSummary)を操作するModelクラス。<br />
@@ -64,5 +66,36 @@ public class BanquetSummaryModel extends BaseModel<BanquetSummary> {
     @Override
     public List<BanquetSummary> findByFieldValuesArgs(Map<String, Object> fieldValues) throws SQLException {
         return mDao.queryForFieldValuesArgs(fieldValues);
+    }
+
+    /**
+     * 宴会IDを生成する。
+     *
+     * @return 1～1000000までのランダム値で、かつユニークとなるID
+     */
+    public int createBanquetId() {
+        int ret = -1;
+        try {
+            List<BanquetSummary> currentSummaries = findAll();
+
+            Random random = new SecureRandom();
+
+            boolean judge = false;
+            // 初回の偏りを回避するため一旦空打ちする
+            ret = random.nextInt(10 ^ 6) + 1;
+            do {
+                ret = random.nextInt(10 ^ 6) + 1;
+                for (BanquetSummary summary : currentSummaries) {
+                    if (summary.getBanquetId() == ret) {
+                        judge = true;
+                        break;
+                    }
+                }
+            } while (judge);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ret;
     }
 }
