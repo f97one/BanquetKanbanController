@@ -3,4 +3,7 @@
     <string name="starts_at">Starts at :</string>
     <string name="add_banquet">Add Banquet</string>
     <string name="edit_banquet">Edit Banquet</string>
+    <string name="banquet_name">Banquet Name :</string>
+    <string name="banquet_starts_at">Starts at :</string>
+    <string name="hint_add_banquet_name">Enter banquet name here.</string>
 </resources>
