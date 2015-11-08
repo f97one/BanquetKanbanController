@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import net.formula97.banquetkanbancontroller.R;
-import net.formula97.banquetkanbancontroller.dto.BanquetSummary;
+import net.formula97.banquetkanbancontroller.entities.BanquetSummary;
 
 import java.text.DateFormat;
 import java.util.List;
